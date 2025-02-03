@@ -1,0 +1,53 @@
+.donor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slideUpFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.next-donor {
+  position: absolute;
+  visibility: hidden;
+}
+
+.current-donor {
+  position: absolute;
+}
+
+.transition-out {
+  animation: slideUpFadeOut 500ms ease-in-out forwards;
+}
+
+.transition-in {
+  animation: slideDownFadeIn 500ms ease-in-out forwards;
+  visibility: visible;
+}

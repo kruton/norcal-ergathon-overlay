@@ -1,0 +1,8 @@
+.new-donors-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0px; /* Distance from the bottom of the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

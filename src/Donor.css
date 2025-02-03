@@ -1,0 +1,35 @@
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.donor-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.donor-name {
+  font-size: 96px;
+  font-family: "FairplexNarrowBold", sans-serif;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 2s ease infinite;
+  -webkit-text-stroke: 2px #000;
+}
+
+.donor-amount {
+  font-size: 64px;
+  font-family: "FairplexNarrowBold", sans-serif;
+  background: linear-gradient(270deg, #a8e063, #56ab2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 2s ease infinite;
+  -webkit-text-stroke: 2px #000;
+}

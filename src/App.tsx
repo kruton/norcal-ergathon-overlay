@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, NavLink } from "react-router-dom"; // Import Routes and Route
+import AllDonors from "./AllDonors";
+import LiveStream from "./LiveStream";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Home() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="home">
+      <nav>
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          <li style={{ display: "inline", marginRight: "1rem" }}>
+            <button>
+              <NavLink to="/all-donors">All Donors</NavLink>
+            </button>
+          </li>
+          <li style={{ display: "inline", marginRight: "1rem" }}>
+            <button>
+              <NavLink to="/live-stream">Live Stream</NavLink>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/all-donors" element={<AllDonors />} />
+        <Route path="/live-stream" element={<LiveStream />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;

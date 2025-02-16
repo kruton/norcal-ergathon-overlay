@@ -11,7 +11,7 @@ export const RaceLane = ({ name, laneNumber, end = false }: RaceLaneProps) => {
   return (
     <LaneWrapper $end={end}>
       <InnerLaneWrapper>
-        LANE {laneNumber}: <TeamName>{name}</TeamName>
+        <LaneNumber>LANE {laneNumber}:</LaneNumber> <TeamName>{name}</TeamName>
       </InnerLaneWrapper>
     </LaneWrapper>
   );
@@ -21,8 +21,7 @@ const LaneWrapper = styled.div<{ $end: boolean }>`
   display: flex;
   color: white;
   width: 35vw;
-  font-family: "Plus Jakarta Sans 400";
-  font-size: 0.8rem;
+  text-align: left;
   padding-top: 0.2rem;
   ${(props) =>
     props.$end
@@ -43,7 +42,6 @@ const LaneWrapper = styled.div<{ $end: boolean }>`
 `;
 
 const InnerLaneWrapper = styled.div`
-  text-align: left;
   width: calc(35vw - 1.7rem);
   padding: 0.2rem 0.3rem 0.3rem 1.4rem;
   background: rgb(2, 0, 36);
@@ -55,8 +53,14 @@ const InnerLaneWrapper = styled.div`
   );
 `;
 
+const LaneNumber = styled.span`
+  font-family: "Plus Jakarta Sans 400";
+  font-size: calc(0.6vw + 12px);
+  text-align: left;
+`;
+
 const TeamName = styled.span`
   font-family: "Plus Jakarta Sans 800";
-  font-size: 1.1rem;
+  font-size: calc(0.9vw + 16px);
   padding-left: 0.5rem;
 `;

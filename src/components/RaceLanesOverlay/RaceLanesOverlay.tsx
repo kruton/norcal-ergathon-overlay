@@ -33,8 +33,8 @@ const OuterWrapper = styled.div`
 
 const RaceName = styled.div`
   width: calc(100% - (1rem + 1rem + 13%));
-  font-size: 1.5rem;
-  font-family: "Plus Jakarta Sans 400";
+  font-size: calc(0.9vw + 16px);
+  font-family: "Plus Jakarta Sans 600";
   text-align: center;
 
   padding-top: 0.5rem;

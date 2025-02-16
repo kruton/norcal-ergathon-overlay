@@ -10,5 +10,7 @@ export default meta;
 type Story = StoryObj<typeof Sparkles>;
 
 export const Primary: Story = {
-  children: <div>These are sparkles!</div>,
+  args: {
+    children: <div>These are sparkles!</div>,
+  },
 };

@@ -1,6 +1,6 @@
-import { Routes, Route, NavLink } from "react-router-dom"; // Import Routes and Route
-import AllDonors from "./AllDonors";
-import LiveStream from "./LiveStream";
+import { Routes, Route, NavLink } from "react-router";
+import { AllDonors } from "@/components/AllDonors/AllDonors";
+import { LiveStream } from "@/components/LiveStream/LiveStream";
 import "./App.css";
 
 function Home() {

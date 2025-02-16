@@ -1,10 +1,10 @@
 import "./AllDonors.css";
-import DonationQR from "./DonationQR";
-import ShowNames from "./ShowNames";
+import { DonationQR } from "@/components/DonationQR/DonationQR";
+import { ShowNames } from "@/components/ShowNames/ShowNames";
 import { useEffect, useState } from "react";
-import { Donation, fetchDonations } from "./FetchDonations";
+import { Donation, fetchDonations } from "@/utils/fetch-donations";
 
-const AllDonors = () => {
+export const AllDonors = () => {
   const [donations, setDonations] = useState<Donation[]>([]);
   const [cursor, setCursor] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
@@ -49,5 +49,3 @@ const AllDonors = () => {
     </>
   );
 };
-
-export default AllDonors;

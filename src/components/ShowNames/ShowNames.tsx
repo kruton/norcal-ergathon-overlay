@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import "./ShowNames.css";
-import Donor from "./Donor";
-import { Donation } from "./FetchDonations";
+import { Donor } from "@/components/Donor/Donor";
+import {
+  Donation,
+  getDonationAmount,
+  getDonorName,
+} from "../../utils/fetch-donations";
 
 interface ShowNamesProps {
   donations: Donation[];
@@ -9,7 +13,11 @@ interface ShowNamesProps {
   onEndReached: () => void;
 }
 
-const ShowNames = ({ donations, startIndex, onEndReached }: ShowNamesProps) => {
+export const ShowNames = ({
+  donations,
+  startIndex,
+  onEndReached,
+}: ShowNamesProps) => {
   const [currentIndex, setCurrentIndex] = useState(startIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -48,15 +56,15 @@ const ShowNames = ({ donations, startIndex, onEndReached }: ShowNamesProps) => {
   return (
     <div className="donor-container" key={currentIndex}>
       <Donor
-        donation={currentDonation}
+        name={getDonorName(currentDonation)}
+        amount={getDonationAmount(currentDonation)}
         className={`current-donor ${isTransitioning ? "transition-out" : ""}`}
       />
       <Donor
-        donation={nextDonation}
+        name={getDonorName(nextDonation)}
+        amount={getDonationAmount(nextDonation)}
         className={`next-donor ${isTransitioning ? "transition-in" : ""}`}
       />
     </div>
   );
 };
-
-export default ShowNames;

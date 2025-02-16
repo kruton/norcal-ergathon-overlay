@@ -30,7 +30,7 @@ export type DonationList = {
   cursor: number;
 };
 
-const fetchDonations: (cursor: number) => Promise<DonationList> = async (
+export const fetchDonations: (cursor: number) => Promise<DonationList> = async (
   cursor
 ) => {
   const args = {
@@ -48,4 +48,12 @@ const fetchDonations: (cursor: number) => Promise<DonationList> = async (
   };
 };
 
-export { fetchDonations };
+export const getDonorName = (donation: Donation) => {
+  return donation.isAnonymous
+    ? "Anonymous"
+    : `${donation.firstName} ${donation.lastName}`;
+};
+
+export const getDonationAmount = (donation: Donation) => {
+  return (donation.transferrableAmount / 100).toFixed(2);
+};

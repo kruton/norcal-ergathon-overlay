@@ -6,7 +6,7 @@ interface SlideInFadeOutProps {
   onAnimationComplete: () => void;
 }
 
-const SlideInFadeOut = ({
+export const SlideInFadeOut = ({
   children,
   onAnimationComplete,
 }: SlideInFadeOutProps) => {
@@ -45,5 +45,3 @@ const SlideInFadeOut = ({
     </div>
   );
 };
-
-export default SlideInFadeOut;

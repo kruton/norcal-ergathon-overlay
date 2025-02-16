@@ -1,8 +1,13 @@
 import "./NewDonors.css";
-import SlideInFadeOut from "./SlideInFadeOut";
+import { SlideInFadeOut } from "@/components/SlideInFadeOut/SlideInFadeOut";
 import { useEffect, useState } from "react";
-import { fetchDonations, Donation } from "./FetchDonations";
-import Donor from "./Donor";
+import {
+  fetchDonations,
+  Donation,
+  getDonorName,
+  getDonationAmount,
+} from "@/utils/fetch-donations";
+import { Donor } from "@/components/Donor/Donor";
 
 const NewDonors = () => {
   const [lastSeen, setLastSeen] = useState<Date | null>(null);
@@ -53,7 +58,10 @@ const NewDonors = () => {
     <div className="new-donors-container">
       {currentDonation && (
         <SlideInFadeOut onAnimationComplete={onAnimationComplete}>
-          <Donor donation={currentDonation} />
+          <Donor
+            name={getDonorName(currentDonation)}
+            amount={getDonationAmount(currentDonation)}
+          />
         </SlideInFadeOut>
       )}
     </div>

@@ -1,5 +1,5 @@
 import "./Donor.css";
-import { Donation } from "@/utils/fetch-donations";
+import Sparkles from "@/components/Sparkles/Sparkles";
 
 interface DonorProps {
   name: string;
@@ -10,7 +10,9 @@ interface DonorProps {
 export const Donor = ({ name, amount, className }: DonorProps) => {
   return (
     <div className={`donor-wrapper ${className || ""}`}>
-      <span className="donor-name">{name}</span>
+      <Sparkles>
+        <span className="donor-name">{name}</span>
+      </Sparkles>
       <span className="donor-amount">Donated ${amount}</span>
     </div>
   );

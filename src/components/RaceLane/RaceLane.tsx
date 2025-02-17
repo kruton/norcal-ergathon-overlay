@@ -54,12 +54,16 @@ const InnerLaneWrapper = styled.div`
 `;
 
 const LaneNumber = styled.span`
+  display: inline-block;
   font-family: "Plus Jakarta Sans 400";
   font-size: calc(0.6vw + 12px);
   text-align: left;
+  width: 18%;
+  text-align: right;
 `;
 
 const TeamName = styled.span`
+  display: inline-block;
   font-family: "Plus Jakarta Sans 800";
   font-size: calc(0.9vw + 16px);
   padding-left: 0.5rem;
